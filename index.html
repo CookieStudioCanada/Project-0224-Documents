@@ -4,33 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rez-Maker</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/docx@7.1.0/build/index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
 </head>
 <body>
-    <h1>Documents</h1>
+    <h1>Résolutions MAKER</h1>
 
-    <form onsubmit="handleSubmit(event)">
-        <label>
-          Company Name:
-          <input type="text" name="company_name">
-        </label>
-        <br>
-        <label>
-          Resolution Name:
-          <input type="text" name="resolution_name">
-        </label>
-        <br>
-        <label>
-          Admin Name:
-          <input type="text" name="admin_name">
-        </label>
-        <br>
-        <button type="submit">Submit</button>
-      </form>
+    <div class="section">
+      <h3>Choix des étapes</h3>
+        <form>
+          <select id="options" onchange="addStepForm()">
+            <option>Entrez vos étapes</option> 
+            <option value="Vente d'actions">Vente d'actions</option>
+            <option value="Dividendes">Dividendes</option>
+            <option value="Echange">Échange d'actions</option>
+            <option value="other">Autres</option>
+          </select>
+          <p id="step-form"></p>
+          <button type="button" onclick="createDoc(event)">Create</button>
+        </form>
+  </div>
 
-    <script src="doc.js"></script>
+  <script src="doc.js"></script>
 </body>
 </html>
